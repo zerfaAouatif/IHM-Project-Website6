@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة تربية النفايات للأطفال</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">ج</div>
+    <div>
+      <h1>لعبة فصل النفايات</h1>
+      <p class="lead">تعلم كيف تفصل النفايات بطريقة ممتعة وبسيطة للأطفال</p>
+    </div>
+  </div>
+  <div style="text-align:left">
+    <div style="font-weight:700">مستوى: <span id="level">سهل</span></div>
+    <div style="color:#6b7280;font-size:13px">النقاط: <span id="scoreSmall">0</span></div>
+  </div>
+</header>
+
+<main class="game">
+  <section class="items-area card" aria-label="لوحة العناصر">
+    <div class="section-title">اسحب النفاية إلى السلة المناسبة</div>
+    <div class="items" id="items" tabindex="0"></div>
+
+    <div class="section-title" style="margin-top:12px">السلات</div>
+    <div class="bins" id="bins">
+      <div class="bin small" data-type="organic" tabindex="0" aria-label="سلة المواد العضوية">
+        <div class="cap">سلة الغذاء 🥕</div>
+        <div class="desc">نفايات عضوية</div>
+        <div class="slot">🍌</div>
+      </div>
+      <div class="bin small" data-type="recyclable" tabindex="0" aria-label="سلة القابلة لإعادة التدوير">
+        <div class="cap">سلة التدوير ♻️</div>
+        <div class="desc">ورق، بلاستيك، زجاج</div>
+        <div class="slot">📦</div>
+      </div>
+      <div class="bin small" data-type="trash" tabindex="0" aria-label="سلة النفايات العادية">
+        <div class="cap">سلة النفايات 🚮</div>
+        <div class="desc">باقي النفايات</div>
+        <div class="slot">🗑️</div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="side">
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="color:#6b7280;font-size:13px">النقاط</div>
+          <div class="big score"><div id="score" class="big">0</div></div>
+        </div>
+        <div style="text-align:right">
+          <div style="color:#6b7280;font-size:13px">المحاولات المتبقية</div>
+          <div style="font-weight:800;font-size:20px" id="lives">5</div>
+        </div>
+      </div>
+
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+
+      <div class="controls" style="margin-top:12px">
+        <button id="resetBtn" class="btn">إعادة اللعب</button>
+        <button id="hintBtn" class="secondary">تلميح</button>
+        <button id="showAllBtn" class="secondary">عرض الحلول</button>
+      </div>
+
+      <small class="hint">يمكن السحب والإسقاط أو النقر على العنصر ثم النقر على السلة.</small>
+    </div>
+
+    <div class="card" style="text-align:center">
+      <div style="font-weight:700">التعليمات البسيطة</div>
+      <ul style="text-align:right;color:#6b7280;padding-left:18px;margin:8px 0 0 0">
+        <li>اسحب الشيء وضَعْه في السلة الصحيحة.</li>
+        <li>كل إجابة صحيحة تكسب نقطة.</li>
+        <li>عند الإجابة الصحيحة: ستظهر رسالة "جيد إجابة صحيحة 🎉".</li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>صُمِّمت لتكون سهلة وممتعة للأطفال — يمكن تعديل العناصر أو إضافة صور لاحقاً</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
