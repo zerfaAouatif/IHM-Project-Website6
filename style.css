@@ -1,0 +1,104 @@
+:root{
+  --bg:#f7fbff; --card:#ffffff; --accent:#0b76ef; --correct:#2ecc71; --wrong:#e74c3c;
+  --text:#0b2540; --muted:#6b7280;
+}
+*{box-sizing:border-box;font-family: "Segoe UI", Tahoma, Arial, "Noto Kufi Arabic", sans-serif}
+body{
+  margin:0; padding:20px; background:linear-gradient(180deg,#eaf4ff, var(--bg));
+  color:var(--text);
+}
+
+header{
+  display:flex; gap:16px; align-items:center; justify-content:space-between;
+  margin-bottom:14px;
+}
+.brand{
+  display:flex; gap:12px; align-items:center;
+}
+.logo{
+  width:64px; height:64px; border-radius:12px; background:linear-gradient(135deg,#7ed56f,#0b76ef);
+  display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:26px;
+  box-shadow:0 6px 18px rgba(11,118,239,0.15);
+}
+h1{margin:0;font-size:20px}
+p.lead{margin:0;color:var(--muted);font-size:14px}
+
+.game{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:18px;
+  align-items:start;
+}
+
+.items-area{
+  background:var(--card); padding:14px; border-radius:14px; box-shadow:0 8px 24px rgba(11,37,64,0.06);
+  min-height:320px;
+}
+.section-title{font-weight:700;margin-bottom:8px}
+.items{
+  display:flex; flex-wrap:wrap; gap:12px;
+}
+.item{
+  width:110px; height:110px; border-radius:12px; background:#fff; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; cursor:grab; user-select:none; padding:8px; box-shadow:0 6px 20px rgba(11,37,64,0.06);
+  transition:transform .12s ease, box-shadow .12s;
+  font-size:20px;
+}
+.item:active{cursor:grabbing}
+.item.focused{outline:3px solid #ffd54d; transform:translateY(-6px)}
+.item .emoji{font-size:36px; margin-bottom:6px}
+.item .label{font-size:13px; color:var(--muted); text-align:center}
+
+.bins{
+  display:flex; gap:10px; justify-content:space-between; margin-top:10px;
+}
+.bin{
+  flex:1; min-height:150px; border-radius:12px; padding:10px; display:flex; flex-direction:column; gap:8px;
+  align-items:center; justify-content:flex-start; text-align:center; font-weight:700; color:white;
+  transition:transform .12s, box-shadow .12s, background .12s;
+}
+.bin.small{min-height:120px}
+.bin .cap{font-size:28px; margin-top:6px}
+.bin .desc{font-size:13px; opacity:.95}
+.bin[data-type="recyclable"]{background:linear-gradient(180deg,#00b894,#009973)}
+.bin[data-type="organic"]{background:linear-gradient(180deg,#e67e22,#c75b12)}
+.bin[data-type="trash"]{background:linear-gradient(180deg,#636e72,#2f3640)}
+.bin.over{transform:translateY(-6px); box-shadow:0 18px 30px rgba(0,0,0,0.12)}
+.bin .slot{margin-top:auto; font-size:40px; opacity:.12}
+
+.side{
+  display:flex; flex-direction:column; gap:12px;
+}
+.card{
+  background:var(--card); padding:14px; border-radius:12px; box-shadow:0 8px 24px rgba(11,37,64,0.06);
+}
+.score{display:flex; gap:10px; align-items:center; justify-content:space-between}
+.score .big{font-size:26px; font-weight:800; color:var(--accent)}
+.feedback{
+  min-height:44px; display:flex; align-items:center; justify-content:center; font-weight:800;
+  border-radius:8px; color:white; padding:8px; font-size:16px;
+  visibility:hidden; opacity:0; transform:translateY(8px); transition:all .25s;
+}
+.feedback.show{visibility:visible; opacity:1; transform:translateY(0)}
+.feedback.correct{background:var(--correct)}
+.feedback.wrong{background:var(--wrong)}
+
+.controls{display:flex; gap:8px; margin-top:6px}
+button.btn{
+  padding:10px 12px; border-radius:10px; border:0; background:var(--accent); color:white; font-weight:700; cursor:pointer;
+  box-shadow:0 8px 20px rgba(11,118,239,0.15);
+}
+button.secondary{background:#f3f4f6; color:var(--text); box-shadow:none; font-weight:700}
+small.hint{display:block;color:var(--muted); margin-top:6px}
+
+@keyframes shake {
+  0%{transform:translateX(0)} 25%{transform:translateX(-6px)} 50%{transform:translateX(6px)} 75%{transform:translateX(-4px)} 100%{transform:translateX(0)}
+}
+.shake{animation:shake .45s}
+
+@media (max-width:900px){
+  .game{grid-template-columns:1fr; }
+  .side{order:2}
+}
+
+footer{margin-top:14px; color:var(--muted); font-size:13px; text-align:center}
