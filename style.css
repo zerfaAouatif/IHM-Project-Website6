@@ -1,0 +1,87 @@
+
+body {
+    font-family: "Tahoma", sans-serif;
+    background: #f1f7f5;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #1b7c5c;
+    font-size: 32px;
+}
+
+.intro {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+
+.instructions {
+    background: #e2f5ec;
+    border-radius: 10px;
+    padding: 15px;
+    width: 80%;
+    margin: 0 auto 25px auto;
+    text-align: right;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.instructions h2 {
+    color: #1b7c5c;
+    margin-bottom: 10px;
+}
+
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.item {
+    background: white;
+    width: 280px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.item img {
+    width: 120px;
+    height: auto;
+    margin: 10px 0;
+}
+
+input {
+    padding: 10px;
+    width: 90%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #1b7c5c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #146248;
+    transform: scale(1.04);
+}
+
+.result {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
